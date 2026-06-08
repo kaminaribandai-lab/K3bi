@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Islamic Vibes App - Gen Z Edition</title>
+    <!-- Tailwind CSS buat tampilan cakep & modern -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Font Awesome buat icon-icon keren -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+        }
+    </style>
+</head>
+<body class="text-slate-100 min-h-screen flex flex-col items-center justify-start p-4 pb-12">
+
+    <!-- Header -->
+    <header class="w-full max-w-md text-center my-6">
+        <h1 class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
+            HalalVibes.app
+        </h1>
+        <p class="text-xs text-slate-400 mt-1">Tetep Istiqomah Bareng Waktu, Kreativitas, & Skena</p>
+    </header>
+
+    <main class="w-full max-w-md space-y-6">
+
+        <!-- SECTION 1: QUOTES ISLAM HARI INI -->
+        <section class="bg-slate-800/60 backdrop-blur-md p-5 rounded-3xl border border-slate-700/50 shadow-xl text-center relative overflow-hidden">
+            <div class="absolute -top-6 -right-6 text-emerald-500/10 text-7xl font-serif">“</div>
+            <span class="text-[10px] bg-emerald-500/20 text-emerald-300 px-3 py-1 rounded-full font-bold uppercase tracking-wider">
+                Quotes Hari Ini
+            </span>
+            <p id="quote-text" class="text-base font-semibold mt-3 italic text-slate-200">
+                "Sabar dulu, bro. Allah tahu lo udah berusaha keras. Hasil gak bakal khianatin doa sepertiga malam."
+            </p>
+            <p id="quote-author" class="text-xs text-emerald-400 mt-2 font-medium">— Reminder Diri</p>
+        </section>
+
+        <!-- SECTION 2: ALARM SHOLAT & ADZAN AUTOMATIC -->
+        <section class="bg-slate-800/60 backdrop-blur-md p-5 rounded-3xl border border-slate-700/50 shadow-xl">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-lg font-bold flex items-center gap-2">
+                    <i class="fa-solid fa-bell text-emerald-400 animate-pulse"></i> Jadwal & Alarm Adzan
+                </h2>
+                <span id="live-clock" class="text-sm font-mono bg-slate-900/80 px-3 py-1 rounded-xl text-cyan-400 border border-slate-700">
+                    00:00:00
+                </span>
+            </div>
+
+            <!-- List Waktu Sholat -->
+            <div class="space-y-2.5">
+                <!-- Subuh -->
+                <div class="sholat-card flex justify-between items-center p-3 bg-slate-900/50 rounded-2xl border border-slate-700/30" data-sholat="Subuh" data-time="04:45">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-cloud-moon text-blue-400 w-5 text-center"></i>
+                        <span class="font-semibold text-sm">Subuh</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-sm font-mono text-slate-300">04:45</span>
+                        <i class="fa-solid fa-volume-high text-xs text-emerald-400 opacity-60"></i>
+                    </div>
+                </div>
+                <!-- Dzuhur -->
+                <div class="sholat-card flex justify-between items-center p-3 bg-slate-900/50 rounded-2xl border border-slate-700/30" data-sholat="Dzuhur" data-time="12:00">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-sun text-amber-400 w-5 text-center"></i>
+                        <span class="font-semibold text-sm">Dzuhur</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-sm font-mono text-slate-300">12:00</span>
+                        <i class="fa-solid fa-volume-high text-xs text-emerald-400 opacity-60"></i>
+                    </div>
+                </div>
+                <!-- Ashar -->
+                <div class="sholat-card flex justify-between items-center p-3 bg-slate-900/50 rounded-2xl border border-slate-700/30" data-sholat="Ashar" data-time="15:15">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-cloud-sun text-orange-400 w-5 text-center"></i>
+                        <span class="font-semibold text-sm">Ashar</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-sm font-mono text-slate-300">15:15</span>
+                        <i class="fa-solid fa-volume-high text-xs text-emerald-400 opacity-60"></i>
+                    </div>
+                </div>
+                <!-- Maghrib -->
+                <div class="sholat-card flex justify-between items-center p-3 bg-slate-900/50 rounded-2xl border border-slate-700/30" data-sholat="Maghrib" data-time="17:55">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-moon text-indigo-400 w-5 text-center"></i>
+                        <span class="font-semibold text-sm">Maghrib</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-sm font-mono text-slate-300">17:55</span>
+                        <i class="fa-solid fa-volume-high text-xs text-emerald-400 opacity-60"></i>
+                    </div>
+                </div>
+                <!-- Isya -->
+                <div class="sholat-card flex justify-between items-center p-3 bg-slate-900/50 rounded-2xl border border-slate-700/30" data-sholat="Isya" data-time="19:05">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-stars text-purple-400 w-5 text-center"></i>
+                        <span class="font-semibold text-sm">Isya</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-sm font-mono text-slate-300">19:05</span>
+                        <i class="fa-solid fa-volume-high text-xs text-emerald-400 opacity-60"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Info & Test Adzan -->
+            <div class="mt-4 pt-3 border-t border-slate-700/50 flex items-center justify-between text-xs text-slate-400">
+                <span><i class="fa-solid fa-circle-info text-cyan-400 mr-1"></i> Auto-adzan aktif terus.</span>
+                <button onclick="testAdzan()" class="bg-slate-700 hover:bg-slate-600 text-slate-200 px-3 py-1 rounded-xl transition font-medium flex items-center gap-1">
+                    <i class="fa-solid fa-play text-[10px]"></i> Test Audio Adzan
+                </button>
+            </div>
+        </section>
+
+        <!-- SECTION 3: ARAH KIBLAT (KOMPAS) -->
+        <section class="bg-slate-800/60 backdrop-blur-md p-5 rounded-3xl border border-slate-700/50 shadow-xl flex flex-col items-center">
+            <h2 class="text-lg font-bold flex items-center gap-2 self-start mb-4">
+                <i class="fa-solid fa-compass text-cyan-400"></i> Cari Arah Kiblat
+            </h2>
+
+            <!-- Lingkaran Kompas -->
+            <div class="relative w-40 h-40 bg-slate-900 rounded-full border-4 border-slate-700 flex items-center justify-center shadow-inner my-2">
+                <!-- Penunjuk Utara/Kiblat -->
+                <div id="compass-pointer" class="absolute w-2 h-full transition-transform duration-200 ease-out flex flex-col justify-between items-center" style="transform: rotate(0deg);">
+                    <div class="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-b-[16px] border-b-rose-500"></div>
+                    <div class="w-1.5 h-1.5 bg-slate-500 rounded-full"></div>
+                    <div class="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[16px] border-t-slate-600"></div>
+                </div>
+                <!-- Icon Ka'bah di Tengah Atas -->
+                <div class="absolute top-6 text-emerald-400 text-lg">
+                    <i class="fa-solid fa-kaaba animate-bounce"></i>
+                </div>
+                <span class="text-[10px] font-bold text-slate-500 absolute top-2">N</span>
+                <span class="text-[10px] font-bold text-slate-500 absolute bottom-2">S</span>
+            </div>
+
+            <p class="text-xs text-slate-400 mt-3 text-center">
+                Muter HP lo/simulasi kompas buat sejajarin jarum <span class="text-rose-400 font-semibold">Merah</span> ke icon <span class="text-emerald-400 font-semibold">Ka'bah</span>.
+            </p>
+        </section>
+
+        <!-- SECTION 4: LAGU GEN Z ISLAMI -->
+        <section class="bg-slate-800/60 backdrop-blur-md p-5 rounded-3xl border border-slate-700/50 shadow-xl">
+            <h2 class="text-lg font-bold flex items-center gap-2 mb-4">
+                <i class="fa-solid fa-music text-purple-400"></i> Playlist Halal Gen Z
+            </h2>
+
+            <!-- Widget Lagu -->
+            <div class="bg-slate-900/70 p-3.5 rounded-2xl border border-slate-700/60 flex items-center gap-4">
+                <div class="w-12 h-12 bg-gradient-to-tr from-purple-500 to-indigo-600 rounded-xl flex items-center justify-center text-xl shadow-lg">
+                    <i class="fa-solid fa-headphones text-white"></i>
+                </div>
+                <div class="flex-1 min-w-0">
+                    <h3 id="song-title" class="text-sm font-bold truncate text-slate-100">Rahmatun Lil'Alameen</h3>
+                    <p id="song-artist" class="text-xs text-slate-400 truncate">Maher Zain (Gen-Z Lo-Fi Remix)</p>
+                </div>
+                <!-- Tombol Play Audio -->
+                <button onclick="toggleMusic()" id="music-btn" class="w-10 h-10 bg-emerald-500 hover:bg-emerald-400 text-slate-900 rounded-full flex items-center justify-center font-bold shadow-md transition">
+                    <i id="music-icon" class="fa-solid fa-play ml-0.5"></i>
+                </button>
+            </div>
+
+            <!-- List Pilihan Lagu -->
+            <div class="mt-3 space-y-1.5 text-xs">
+                <div onclick="changeSong('Rahmatun Lil\'Alameen', 'Maher Zain (Gen-Z Lo-Fi Remix)')" class="p-2 hover:bg-slate-700/40 rounded-xl cursor-pointer transition flex justify-between text-slate-300">
+                    <span>1. Rahmatun Lil'Alameen — Maher Zain</span>
+                    <span class="text-purple-400">Trending</span>
+                </div>
+                <div onclick="changeSong('Aisyah Istri Rasulullah', 'Syahla (Acoustic Version)')" class="p-2 hover:bg-slate-700/40 rounded-xl cursor-pointer transition flex justify-between text-slate-300">
+                    <span>2. Aisyah Istri Rasulullah — Syahla</span>
+                    <span class="text-slate-500">Chill</span>
+                </div>
+                <div onclick="changeSong('Assalamualaikum', 'Harris J (Speed Up)')" class="p-2 hover:bg-slate-700/40 rounded-xl cursor-pointer transition flex justify-between text-slate-300">
+                    <span>3. Assalamualaikum — Harris J</span>
+                    <span class="text-slate-500">Vibes</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- AUDIO ELEMENTS (Menggunakan public MP3 open source / sample) -->
+    <!-- Audio Adzan -->
+    <audio id="adzan-audio" src="https://www.soundjay.com/buttons/sounds/button-4.mp3" preload="auto"></audio>
+    <!-- Audio Musik / Background Nasheed (Menggunakan musik santai open source sebagai pengganti) -->
+    <audio id="nasheed-audio" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" preload="auto" loop></audio>
+
+    <!-- SCRIPT UTAMA -->
+    <script>
+        // 1. DATA QUOTES ISLAMIC GEN Z
+        const quotes = [
+            { txt: "Sabar dulu, bro. Allah tahu lo udah berusaha keras. Hasil gak bakal khianatin doa sepertiga malam.", auth: "Reminder Diri" },
+            { txt: "Overthinking mulu, wudhu gih. Curhatnya di sajadah, bukan di second account.", auth: "Anak Masjid Skena" },
+            { txt: "Kejar dunia gak ada habisnya. Jangan lupa check-in Sholat 5 waktu, itu investasi akhirat lo.", auth: "Hijrah Vibing" },
+            { txt: "Gagal hari ini? Slow, rencana Allah jauh lebih estetik daripada ekspektasi lo.", auth: "Akhi Karir" }
+        ];
+        
+        // Pilih quotes acak pas load page
+        const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+        document.getElementById('quote-text').innerText = `"${randomQuote.txt}"`;
+        document.getElementById('quote-author').innerText = `— ${randomQuote.auth}`;
+
+        // 2. REALTIME CLOCK & AUTO ADZAN ALARM SYSTEM
+        let adzanMuted = false;
+        const adzanAudio = document.getElementById('adzan-audio');
+
+        // Ganti URL Audio Adzan asli di sini kalau lo punya link .mp3 adzan full!
+        // Contoh: adzanAudio.src = "https://domain-lo.com/adzan.mp3";
+        // Sementara pake bunyi beep/bell yang aman & open-source biar gak error.
+
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const currentTimeString = `${hours}:${minutes}`;
+            
+            // Render jam digital
+            document.getElementById('live-clock').innerText = `${hours}:${minutes}:${seconds}`;
+
+            // Check kecocokan waktu sholat buat alarm adzan otomatis
+            const cards = document.querySelectorAll('.sholat-card');
+            cards.forEach(card => {
+                const sholatTime = card.getAttribute('data-time');
+                const sholatName = card.getAttribute('data-sholat');
+                
+                if (currentTimeString === sholatTime) {
+                    card.classList.add('bg-emerald-950', 'border-emerald-500');
+                    // Trigger adzan otomatis pas detik :00
+                    if (seconds === "00") {
+                        playAdzan(sholatName);
+                    }
+                } else {
+                    card.classList.remove('bg-emerald-950', 'border-emerald-500');
+                }
+            });
+        }
+        setInterval(updateClock, 1000);
+
+        function playAdzan(namaSholat) {
+            adzanAudio.play().then(() => {
+                alert(`🚨 TOA MASJID BUNYI! Udah masuk waktu sholat ${namaSholat}, bro! Kuy buruan wudhu.`);
+            }).catch(e => console.log("Izin audio browser belum diaktifkan user."));
+        }
+
+        function testAdzan() {
+            adzanAudio.play();
+            alert("🔊 Mengetes Audio Adzan... (Pastikan volume HP/Laptop lo nyala)");
+        }
+
+        // 3. FITUR KIBLAT (SIMULASI & DEVICE ORIENTATION)
+        const pointer = document.getElementById('compass-pointer');
+        
+        // Jika dibuka di smartphone yang support sensor gyro/kompas
+        if (window.DeviceOrientationEvent) {
+            window.addEventListener('deviceorientation', function(event) {
+                // alpha adalah rotasi device berdasarkan arah utara (0 - 360 derajat)
+                if(event.alpha !== null) {
+                    let degree = event.alpha;
+                    // Estimasi sudut kiblat untuk Indonesia rata-rata kisaran 290-295 derajat barat laut
+                    // Kita adjust posisinya biar interaktif
+                    pointer.style.transform = `rotate(${degree - 295}deg)`;
+                }
+            }, true);
+        }
+
+        // Jalankan simulasi muter kompas dikit kalau di desktop biar estetik
+        let mockDegree = 0;
+        if (!window.DeviceOrientationEvent || window.innerWidth > 768) {
+            setInterval(() => {
+                mockDegree = (mockDegree + 1) % 360;
+                // Kita buat efek goyang kompas natural nyari arah
+                let wiggle = Math.sin(mockDegree / 10) * 15;
+                pointer.style.transform = `rotate(${wiggle}deg)`;
+            }, 100);
+        }
+
+        // 4. MUSIC GEN Z PLAYER CONTROLLER
+        const nasheedAudio = document.getElementById('nasheed-audio');
+        const musicBtn = document.getElementById('music-btn');
+        const musicIcon = document.getElementById('music-icon');
+
+        function toggleMusic() {
+            if (nasheedAudio.paused) {
+                nasheedAudio.play();
+                musicIcon.className = "fa-solid fa-pause";
+                musicBtn.classList.remove('bg-emerald-500');
+                musicBtn.classList.add('bg-purple-500');
+            } else {
+                nasheedAudio.pause();
+                musicIcon.className = "fa-solid fa-play ml-0.5";
+                musicBtn.classList.remove('bg-purple-500');
+                musicBtn.classList.add('bg-emerald-500');
+            }
+        }
+
+        function changeSong(title, artist) {
+            document.getElementById('song-title').innerText = title;
+            document.getElementById('song-artist').innerText = artist;
+            
+            // Di sini lo bisa ganti path/source file audio nasheed-audio.src sesuai lagu yang diklik
+            // Kita reset playernya biar langsung muter lagu baru
+            nasheedAudio.currentTime = 0;
+            nasheedAudio.play();
+            musicIcon.className = "fa-solid fa-pause";
+        }
+    </script>
+</body>
+</html>
